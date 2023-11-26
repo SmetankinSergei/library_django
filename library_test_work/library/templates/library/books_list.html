@@ -1,0 +1,37 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/null_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/base.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'library/css/back_button.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'library/css/books_list.css' %}">
+{% endblock %}
+
+{% block body %}
+<br>
+<a href="/"><div class="back_button">Back to start page</div></a>
+<br>
+{% for book in books %}
+<div class="book_desc">
+    <p>Author: {{ book.author }}</p>
+    <p>Name: {{ book.name }}</p>
+    <p>Year: {{ book.year }}</p>
+    <p>ISBN: {{ book.isbn }}</p>
+</div>
+
+<div class="buttons_forms">
+    <form class="button_form" action="/update_book_info/" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{ book.pk }}" name="update">
+        <button class="update_button" type="submit">Update</button>
+    </form>
+    <form class="button_form" action="/" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="delete {{ book.pk }}" name="name">
+        <button class="delete_button" type="submit">Delete</button>
+    </form>
+</div>
+{% endfor %}
+<br>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/null_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/base.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'library/css/back_button.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'library/css/add_book_form.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<form class="add_form" action="" method="post">
+    {% csrf_token %}
+
+    <label for="id_name">Name:</label>
+    <input type="text" name="name" id="id_name">
+    <label for="id_email">E-mail:</label>
+    <input type="text" name="email" id="id_email">
+
+    <button type="submit">Add user</button>
+
+</form>
+
+<a href="/"><div class="back_button">Back to start page</div></a>
+{% endblock %}

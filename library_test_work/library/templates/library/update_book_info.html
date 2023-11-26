@@ -1,0 +1,29 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block style %}
+<link type="text/css" rel="stylesheet" href="{% static 'library/css/back_button.css' %}">
+{% endblock %}
+
+{% block body %}
+
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label for="id_name">Name:</label>
+    <input type="text" name="name" id="id_name" value="{{ book.name }}">
+    <label for="id_author">Author:</label>
+    <input type="text" name="author" id="id_author" value="{{ book.author }}">
+    <label for="id_year">Year:</label>
+    <input type="text" name="year" id="id_year" value="{{ book.year }}">
+    <label for="id_isbn">ISBN:</label>
+    <input type="text" name="isbn" id="id_isbn" value="{{ book.isbn }}">
+    <input type="hidden" name="pk" value="{{ book.pk }}">
+
+    <button type="submit">Update book</button>
+
+</form>
+
+<a href="/"><div class="back_button">Back to start page</div></a>
+{% endblock %}

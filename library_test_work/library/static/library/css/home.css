@@ -1,0 +1,71 @@
+.book_management {
+    margin-top: 20px;
+}
+
+.show_all, .add_new {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 8px;
+    height: 40px;
+    border-radius: 8px;
+    margin-top: 20px;
+    background: #ffe3cd;
+}
+
+.search_form button {
+    background: #ffe3cd;
+}
+
+.show_all:hover, .add_new:hover, .search_form button:hover {
+    background: #f4eae2;
+}
+
+.search_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search_form label, .search_form input, .search_form button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.search_form input {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.search_form label {
+    padding-top: 10px;
+}
+
+.user_management {
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.user_management p, .book_management {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.new_user {
+    margin-top: 20px;
+    text-align: center;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 20px;
+    padding-top: 8px;
+    background: #4be54b;
+}
+
+.new_user:hover {
+    background: #87f487;
+}
