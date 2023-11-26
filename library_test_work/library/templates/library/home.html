@@ -1,0 +1,30 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/null_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/base.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'library/css/back_button.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'library/css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="book_management">Book management</div>
+<div class="main" style="width:80%;margin-left:10%">
+    <a href="/books_list/"><div class="show_all">Show all books</div></a>
+    <a href="/add_book_form/"><div class="add_new">Add new book</div></a>
+    <form class="search_form" action="books_list/" method="post">
+        {% csrf_token %}
+        <label for="book_name">Enter book name:</label>
+        <input type="text" name="book_name" id="book_name" placeholder="enter book name">
+        <button type="submit"><div class="search">Search book by name</div></button>
+    </form>
+</div>
+
+<div class="user_management">
+    <p>User management</p>
+    <div class="user_management_buttons">
+        <a href="add_user_form/"><div class="new_user">Add new user</div></a>
+    </div>
+</div>
+{% endblock %}

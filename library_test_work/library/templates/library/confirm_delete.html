@@ -1,0 +1,27 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/null_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/base.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'library/css/confirm_delete.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="alert">
+<p>Are you sure you want to delete this book?</p>
+    <div class="book_info">
+        {{ book.name }}<br><br>
+        {{ book.author }}
+    </div>
+</div>
+
+<div class="buttons">
+    <form method="post" action="confirm_delete/">
+        {% csrf_token %}
+        <input type="hidden" value="{{ book.pk }}" name="book_pk">
+        <button class="delete_button" type="submit">Delete</button>
+    </form>
+    <a href="books_list/"><div class="cancel_button">Cancel</div></a>
+</div>
+{% endblock %}

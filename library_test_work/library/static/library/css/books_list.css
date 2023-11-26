@@ -1,0 +1,41 @@
+.book_desc {
+    font-size: 24px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons_forms {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.button_form button {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    width: 260px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.update_button {
+    background: #4be54b;
+}
+
+.update_button:hover {
+    background: #87f487;
+}
+
+.delete_button {
+    background: #ff1313;
+}
+
+.delete_button:hover {
+    background: #f69999;
+}
