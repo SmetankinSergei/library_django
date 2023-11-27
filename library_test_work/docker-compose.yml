@@ -6,10 +6,9 @@ services:
     volumes:
       - mysql_data:\MySQL\MySQL Server 8.0\Data\library_test
   web:
+    web:
     build: .
-    command:
-      - python /app_dir/manage.py runserver 0.0.0.0.8000
-      - python /app_dir/manage.py migrate
+    command: python /app_dir/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app_dir
     ports:
